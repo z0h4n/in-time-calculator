@@ -1,0 +1,85 @@
+body {
+  background-color: antiquewhite;
+  font-family: monospace;
+}
+
+textarea {
+  resize: none;
+  width: 50%;
+  height: 250px;
+  margin: 10px auto 0px auto;
+  display: block;
+  box-sizing: boder-box;
+}
+
+h1 {
+  text-align: center;
+  background-color: red;
+  border-radius: 50px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: MONOSPACE;
+  padding: 5px 0px 5px 0px;
+}
+
+.warning {
+  text-align: center;
+  background-color: rgba(255, 255, 0, 0.5);
+  padding: 10px;
+}
+
+.dayTypeContainer {
+  width: 50%;
+  display: block;
+  margin: 10px auto 0px auto;
+}
+
+.radioContainer {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  cursor: default;
+}
+
+.button {
+  width: 50%;
+}
+
+.absent {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.halfday {
+  background-color: rgba(255, 165, 0, 0.5);
+}
+
+.fullday {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.compoff {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.fullday-compoff {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.absent::after {
+  content: " - Absent"
+}
+
+.halfday::after {
+  content: " - Half Day"
+}
+
+.fullday::after {
+  content: " - Full Day"
+}
+
+.compoff::after {
+  content: " - Full Day + Half Day Compoff"
+}
+
+.fullday-compoff::after {
+  content: " - Full Day Compoff"
+}
