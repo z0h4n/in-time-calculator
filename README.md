@@ -1,4 +1,4 @@
-[Website](https://z0h4n.github.io/in-time-calculator/)
+[See it in action](https://z0h4n.github.io/in-time-calculator/)
 
 A simple tool for calculating my [office](http://www.mitrmedia.com) in time hours.
 
