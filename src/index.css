@@ -3,15 +3,6 @@ body {
   font-family: monospace;
 }
 
-textarea {
-  resize: none;
-  width: 50%;
-  height: 250px;
-  margin: 10px auto 0px auto;
-  display: block;
-  box-sizing: boder-box;
-}
-
 h1 {
   text-align: center;
   background-color: red;
@@ -21,17 +12,57 @@ h1 {
   padding: 5px 0px 5px 0px;
 }
 
+#textarea {
+  resize: none;
+  width: 40%;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+#dataTable {
+  width: 40%;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: boder-box;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#clock {
+  margin-top: 5px;
+}
+
+#clockLabel {
+  display: inline-block;
+  border-radius: 20px 0px 0px 20px;
+  background-color: burlywood;
+  padding: 5px 10px 5px 10px;
+}
+
+#clockTime {
+  display: inline-block;
+  border-radius: 0px 20px 20px 0px;
+  background-color: orange;
+  padding: 5px 10px 5px 10px;
+}
+
+#dayTypeContainer {
+  display: block;
+  text-align: center;
+  margin: 10px auto 0px auto;
+}
+
+#dayTypeLabel {
+  margin: 10px;
+}
+
 .warning {
   text-align: center;
   background-color: rgba(255, 255, 0, 0.5);
   padding: 10px;
   border: 2px solid rgba(0, 0, 0, 0.5);
-}
-
-.dayTypeContainer {
-  width: 50%;
-  display: block;
-  margin: 10px auto 0px auto;
+  box-sizing: border-box;
 }
 
 .radioContainer {
