@@ -1,8 +1,6 @@
-[See it in action](https://z0h4n.github.io/in-time-calculator/)
-
 A simple tool for calculating my [office](http://www.mitrmedia.com) in time hours.
 
-Example: Navigate to the [website](https://z0h4n.github.io/in-time-calculator/) and paste the given data.<br>
+Example: Navigate to the [website](https://z0h4n.github.io/in-time-calculator/build/) and paste the given data.<br>
 ```
 1	03 Nov 2017 10:46:40 AM	In	19	02:15:24
 2	03 Nov 2017 01:02:04 PM	Out	19
