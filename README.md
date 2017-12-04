@@ -12,11 +12,15 @@ Example: Navigate to the [website](https://z0h4n.github.io/in-time-calculator/) 
 
 Development
 ```
+Navigate to src
+
 npm install
 npm start
 ```
 
 Production
 ```
+Navigate to src
+
 npm run build
 ```
