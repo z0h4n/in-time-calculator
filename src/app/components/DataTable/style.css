@@ -1,0 +1,8 @@
+#dataTable {
+    width: 40%;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: 20px;
+}
