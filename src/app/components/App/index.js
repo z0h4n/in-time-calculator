@@ -3,6 +3,7 @@ import Warning from './../Warning';
 import DayType from './../DayType';
 import UserInput from './../UserInput';
 import TimeDisplay from './../TimeDisplay';
+import UseCRX from './../UseCRX';
 
 class App extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <UseCRX />
         <Warning currentTime={this.state.currentTime} />
         <DayType onChange={this.onDayTypeChange} />
         <UserInput onInput={this.onUserInput} onDelete={this.onRowDelete} data={this.state.data || null} />

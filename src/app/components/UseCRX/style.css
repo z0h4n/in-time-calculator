@@ -1,0 +1,30 @@
+.crx {
+  background-color: indianred;
+  color: white;
+  border: 3px solid;
+  border-radius: 5px;
+  padding: 10px;
+  position: fixed;
+  left: 50%;
+  top: 10px;
+  width: 500px;
+  transform: translateX(-50%);
+}
+
+.crx a {
+  color: white;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: white;
+  color: indianred;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
