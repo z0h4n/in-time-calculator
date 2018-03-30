@@ -1,3 +1,5 @@
+<h3>This tool is now available as a Google Chrome Extension. <a href="https://github.com/z0h4n/crx-in-time-calculator">Click here to check it out.</a></h3>
+
 A simple tool for calculating my [office](http://www.mitrmedia.com) in time hours.
 
 Example: Navigate to the [website](https://z0h4n.github.io/in-time-calculator/) and paste the given data.<br>
