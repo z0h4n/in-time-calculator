@@ -1,4 +1,8 @@
 import App from './App';
-import SevenSegmentDisplay from './SevenSegmentDisplay';
+import SwipeInput from './SwipeInput';
+import SwipeTable from './SwipeTable';
+import TimeDisplay from './TimeDisplay';
+import Sessions from './Sessions';
+import DayTypeSelector from './DayTypeSelector';
 
-export { App, SevenSegmentDisplay };
+export { App, SwipeInput, SwipeTable, TimeDisplay, Sessions, DayTypeSelector };
