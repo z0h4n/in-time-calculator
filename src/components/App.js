@@ -1,5 +1,5 @@
 import React from 'react';
-import { SwipeInput, SwipeTable, TimeDisplay, Sessions, DayTypeSelector } from '@Components';
+import { SwipeInput, SwipeTable, TimeDisplay, Sessions, DayTypeSelector, Errors } from '@Components';
 import { SwipeClass, DateClass } from '@Classes';
 
 export default class App extends React.Component {
@@ -8,14 +8,14 @@ export default class App extends React.Component {
     this.onInput = this.onInput.bind(this);
     this.onDayTypeChange = this.onDayTypeChange.bind(this);
     this.tick = this.tick.bind(this);
-    this.state = { swipes: new SwipeClass(), timeTillLastOut: 0, timeAfterLastIn: 0, dayType: 0 };
+    this.state = { swipes: new SwipeClass(), timeTillLastOut: 0, timeAfterLastIn: 0, dayType: 0, swipeErrors: null };
   }
 
   onInput(event) {
     const swipes = SwipeClass.generateFromString(event.target.value);
     const timeTillLastOut = swipes.getTimeTillLastOut();
-
-    this.setState({ swipes, timeTillLastOut }, this.tick);
+    const swipeErrors = swipes.validate();
+    this.setState({ swipes, timeTillLastOut, swipeErrors }, this.tick);
   }
 
   onDayTypeChange(event) {
@@ -41,6 +41,7 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
+        {this.state.swipeErrors ? <Errors count={this.state.swipeErrors.length} /> : null}
         <TimeDisplay time={timeTillLastOut + timeAfterLastIn} color={document.body.style.color} />
         <DayTypeSelector onDayTypeChange={this.onDayTypeChange} />
         <Sessions time={timeTillLastOut + timeAfterLastIn} dayType={dayType} lastSwipe={swipes.last()} />

@@ -57,4 +57,18 @@ export default class SwipeClass extends Array {
   last() {
     return this[this.length - 1] || null;
   }
+
+  validate() {
+    const errors = [];
+
+    if (this.length > 1) {
+      for (let i = 1; i <= this.length - 1; i++) {
+        if (this[i].inout === this[i - 1].inout) {
+          errors.push(i + 1);
+        }
+      }
+    }
+
+    return errors.length ? errors : null;
+  }
 }
