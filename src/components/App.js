@@ -41,9 +41,9 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
-        <TimeDisplay time={timeTillLastOut + timeAfterLastIn} />
+        <TimeDisplay time={timeTillLastOut + timeAfterLastIn} color={document.body.style.color} />
         <DayTypeSelector onDayTypeChange={this.onDayTypeChange} />
-        <Sessions time={timeTillLastOut + timeAfterLastIn} dayType={dayType} />
+        <Sessions time={timeTillLastOut + timeAfterLastIn} dayType={dayType} lastSwipe={swipes.last()} />
         <SwipeInput onInput={this.onInput} />
         {swipes.length ? <SwipeTable swipes={swipes} /> : null}
       </div>

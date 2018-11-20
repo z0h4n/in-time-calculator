@@ -31,31 +31,39 @@ const sessions = [
 
 const COMPLETED_MSG = 'Complete';
 
-function sessionLabel(remainingTime) {
+function sessionLabel(remainingTime, isLastOut) {
   const completesOn = new DateClass(DateClass.now() + remainingTime);
   const sessionComplete = remainingTime <= 0;
   const style = {
     whiteSpace: 'nowrap',
-    color: sessionComplete ? 'inherit' : '#555',
+    color: document.body.style.color,
     margin: '0px 10px'
   };
 
   return (
     <div style={style}>
-      {sessionComplete ? COMPLETED_MSG : DateClass.msecsToHHMMSS(remainingTime)} | {completesOn.toLocaleString()}
+      {
+        sessionComplete
+          ? COMPLETED_MSG
+          : `${DateClass.msecsToHHMMSS(remainingTime)}${isLastOut
+            ? ''
+            : ` | ${completesOn.toLocaleString()}`}`
+      }
     </div>
   );
 }
 
 export default function Sessions(props) {
-  const current_sessions = sessions[props.dayType];
-  const remaining = current_sessions.map(session => session.time - props.time);
+  const { dayType, time, lastSwipe } = props;
+  const current_sessions = sessions[dayType];
+  const remaining = current_sessions.map(session => session.time - time);
 
   return (
     <div>
       {
         remaining.map((r, i) => {
           const isComplete = r <= 0;
+          const isLastOut = lastSwipe && lastSwipe.inout === 'Out';
 
           return (
             <div key={i}>
@@ -63,12 +71,12 @@ export default function Sessions(props) {
                 {current_sessions[i].label} | {DateClass.msecsToHHMM(current_sessions[i].time)}
               </ControlLabel>
               <ProgressBar
-                bsStyle={isComplete ? 'success' : 'info'}
+                bsStyle={isComplete ? 'success' : 'warning'}
                 max={current_sessions[i].time}
                 now={isComplete ? current_sessions[i].time : current_sessions[i].time - r}
-                striped={isComplete ? false : true}
-                active={isComplete ? false : true}
-                label={r < current_sessions[i].time ? sessionLabel(r) : ''} />
+                striped={isComplete || isLastOut ? false : true}
+                active={isComplete || isLastOut ? false : true}
+                label={r < current_sessions[i].time ? sessionLabel(r, isLastOut) : ''} />
             </div>
           )
         })

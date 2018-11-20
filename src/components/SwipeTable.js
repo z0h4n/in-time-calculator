@@ -2,9 +2,9 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 function TableData(props) {
-  return props.swipes.map(s => {
+  return props.swipes.map((s, i) => {
     return (
-      <tr key={s['#']}>
+      <tr key={i}>
         <td>{s['#']}</td>
         <td>{s.date.toLocaleString()}</td>
         <td>{s.inout}</td>

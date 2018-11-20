@@ -9,23 +9,23 @@ function Cirle(props) {
 function Colon(props) {
   return (
     <div style={{ display: 'inline-block' }}>
-      <Cirle color={props.color}/>
+      <Cirle color={props.color} />
       <div style={{ height: '15px' }}></div>
-      <Cirle color={props.color}/>
+      <Cirle color={props.color} />
     </div>
   )
 }
 
 export default function TimeDisplay(props) {
-  const time = (new DateClass(props.time)).toHHMMSS();
+  const time = (new DateClass(props.time < 0 ? 0 : props.time)).toHHMMSS();
   return (
-    <div style={{ display: 'table', margin: '10px auto' }}>
+    <div style={{ display: 'table', margin: '30px auto' }}>
       <div style={{ display: 'table-row' }}>
         {
           time.split('').map((t, i) => {
             return (
-              <div key={i} style={{ display: 'table-cell', padding: '0px 5px', verticalAlign: 'middle' }}>
-                {t !== ':' ? <SevenSegmentDisplay key={i} value={t} /> : <Colon key={i} />}
+              <div key={i} style={{ display: 'table-cell', padding: '0px 10px', verticalAlign: 'middle' }}>
+                {t !== ':' ? <SevenSegmentDisplay key={i} value={t} onColor={props.color} height={10} /> : <Colon key={i} color={props.color} />}
               </div>
             )
           })
