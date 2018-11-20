@@ -36,6 +36,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist', 'index.html']),
-    new HtmlWebpackPlugin({ template: 'src/index.html', filename: 'index.html' })
+    new HtmlWebpackPlugin({ template: 'src/index.html', filename: isDevEnv ? 'index.html' : '../index.html' })
   ]
 };
