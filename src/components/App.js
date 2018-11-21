@@ -11,8 +11,8 @@ export default class App extends React.Component {
     this.state = { swipes: new SwipeClass(), timeTillLastOut: 0, timeAfterLastIn: 0, dayType: 0, swipeErrors: null };
   }
 
-  onInput(event) {
-    const swipes = SwipeClass.generateFromString(event.target.value);
+  onInput(value) {
+    const swipes = SwipeClass.generateFromString(value);
     const timeTillLastOut = swipes.getTimeTillLastOut();
     const swipeErrors = swipes.validate();
     this.setState({ swipes, timeTillLastOut, swipeErrors }, this.tick);
